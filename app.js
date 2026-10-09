@@ -22,7 +22,7 @@ const Q=[
  {s:0,k:"lama",lab:"Lama terlibat",q:"Lama Anda terlibat dalam pelaksanaan akuntansi dan/atau pelaporan keuangan",type:"single",opts:["Kurang dari 1 tahun","1–3 tahun","4–5 tahun","Lebih dari 5 tahun"]},
  {s:1,k:"q4",lab:"Pemahaman alur",q:"Seberapa baik Anda memahami alur dan tahapan pelaksanaan akuntansi pada OPD?",type:"scale",sc:S_UNDERSTAND},
  {s:1,k:"q5",lab:"Pengetahuan Perwali",q:"Seberapa baik Anda memahami Perwali tentang Kebijakan Akuntansi?",type:"scale",sc:S_UNDERSTAND},
- {s:1,k:"q6",lab:"Pengumpulan data",q:"Seberapa besar kesulitan yang Anda alami dalam mengumpulkan data dari bidang atau unit kerja?",type:"scale",sc:S_DIFFICULTY},
+ {s:1,k:"q6",lab:"Pengumpulan data",q:"Seberapa besar kesulitan yang Anda alami dalam mengumpulkan data dari bidang atau unit kerja sebagai dasar penyusunan laporan keuangan perangkat daerah?",type:"scale",sc:S_DIFFICULTY},
  {s:1,k:"q7",lab:"Jurnal koreksi di SIPD",q:"Seberapa baik Anda memahami cara penginputan jurnal pada SIPD apabila terdapat kesalahan penginputan kode rekening?",type:"scale",sc:S_UNDERSTAND},
  {s:1,k:"q8",lab:"Penelusuran selisih SPJ dan LRA",q:"Seberapa besar kesulitan yang Anda alami dalam menelusuri data jika terdapat selisih antara SPJ Fungsional dengan LRA?",type:"scale",sc:S_DIFFICULTY},
  {s:2,k:"q9",lab:"Kendala",q:"Kendala apa yang paling sering Anda hadapi dalam pelaksanaan akuntansi dan pelaporan?",type:"multi",max:3,opts:C9,other:"Sebutkan kendala lainnya"},
