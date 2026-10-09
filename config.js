@@ -1,7 +1,7 @@
 // ===== PENGATURAN (ubah di sini) =====
 const CONFIG = {
   // Tempel URL Web App Google Apps Script di sini. Kosongkan = mode prototype (simpan di browser).
-  ENDPOINT: "https://script.google.com/macros/s/AKfycbx556cWg43OZo66vAPsYr_7VT4INP6iu-7qPTqxinTLXLupj2SpTxryLrdysWoCA2X9/exec",
+  ENDPOINT: "https://script.google.com/macros/s/AKfycbxVIOVIoa37HfmfM70DijBn_a0hylSzTAypA2bI5yUYOkrENaJojFLrzHSj_S1Z43gS/exec",
   YEAR: 2026,
   // Daftar OPD (36) dari CEK_LIST.xlsx, Sheet1.
   OPDS: [

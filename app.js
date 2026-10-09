@@ -3,6 +3,7 @@ const STAGES=[
  {n:"Profil",t:"Profil Responden"},
  {n:"Kondisi",t:"Kondisi Pelaksanaan",intro:"Nilai setiap pernyataan berdasarkan kondisi yang benar-benar terjadi dalam pekerjaan Anda di OPD."},
  {n:"Kendala",t:"Kendala dan Akar Permasalahan"},
+ {n:"Pengetahuan",t:"Pengetahuan Laporan Keuangan"},
  {n:"Penyelesaian",t:"Rekonsiliasi dan Penyelesaian Masalah"},
  {n:"Pembinaan",t:"Kebutuhan Pemahaman dan Pembinaan"},
  {n:"Prioritas",t:"Prioritas Perbaikan"}];
@@ -12,29 +13,32 @@ const S_EASE=["Sangat Sulit","Sulit","Cukup Mudah","Mudah","Sangat Mudah"];
 const S_CLEAR=["Sangat Tidak Jelas","Tidak Jelas","Cukup Jelas","Jelas","Sangat Jelas"];
 const C9=["Kurang memahami ketentuan/peraturan","Kurang memahami prosedur","Kesulitan pencatatan transaksi","Kesulitan menentukan akun/rekening","Data atau dokumen tidak lengkap","Data terlambat diterima","Terdapat perbedaan data antar sumber","Kesulitan melakukan rekonsiliasi","Kesulitan melakukan koreksi/penyesuaian","Kesulitan menyusun laporan","Kesalahan input","Perubahan ketentuan yang cepat","Keterbatasan waktu","Keterbatasan jumlah/kemampuan SDM","Koordinasi antarunit belum optimal","Permasalahan aplikasi/sistem","Kurangnya informasi atau arahan","Lainnya"];
 const CAUSES=["Kurangnya pemahaman","Ketentuan/prosedur sulit dipahami","Informasi tidak diperoleh tepat waktu","Data dari sumber berbeda tidak sama","Dokumen pendukung tidak lengkap","Kesalahan manusia/input","Koordinasi antarunit","Keterbatasan SDM","Keterbatasan waktu","Perubahan data/transaksi","Sistem/aplikasi","Kurangnya pendampingan","Lainnya"];
-const MATERIALS=["Alur dan tahapan akuntansi","Pencatatan transaksi","Penentuan akun/rekening","Koreksi dan penyesuaian","Rekonsiliasi","Penyusunan laporan keuangan","Analisis laporan keuangan","Dokumen pendukung","Ketentuan/peraturan","Perubahan ketentuan","Penanganan transaksi/kasus tertentu","Penyelesaian perbedaan data","Pertanggungjawaban keuangan","Penggunaan aplikasi/sistem","Lainnya"];
+const MATERIALS=["Peraturan terkait akuntansi dan pelaporan","Alur dan Tahapan Penyusunan Laporan Keuangan Perangkat Daerah","Hubungan antar Jenis Laporan Keuangan yang disusun oleh Perangkat Daerah","Cara penyusunan Jurnal koreksi dan penginputan di SIPD","Penyelesaian permasalahan perbedaan data laporan antara SPJ Fungsional dan LRA","Penjelasan lebih lanjut tentang penggunaan aplikasi SIPD RI menu Akuntansi Pelaporan","Lainnya"];
 const SUPPORT=["Panduan langkah demi langkah","SOP/alur proses","Contoh kasus dan penyelesaiannya","Pelatihan teknis","Sosialisasi","Pendampingan langsung","Konsultasi individual","Forum tanya jawab","Video/tutorial","FAQ atau kumpulan permasalahan yang sering terjadi","Lainnya"];
 const Q=[
  {s:0,k:"opd",lab:"OPD",q:"OPD",type:"combo",help:"Klik kolom di bawah untuk melihat daftar, atau ketik sebagian nama untuk mencari."},
- {s:0,k:"peran",lab:"Peran",q:"Peran Anda dalam pelaksanaan akuntansi dan pelaporan keuangan",type:"single",opts:["PPK","Bendahara","Staf akuntansi/pelaporan","Pengelola keuangan lainnya","Pejabat penanggung jawab","Lainnya"],other:"Sebutkan peran Anda"},
+ {s:0,k:"peran",lab:"Peran",q:"Peran Anda dalam pelaksanaan akuntansi dan pelaporan keuangan",type:"single",opts:["PPK SKPD","Penyusun Laporan Keuangan Perangkat Daerah"]},
  {s:0,k:"lama",lab:"Lama terlibat",q:"Lama Anda terlibat dalam pelaksanaan akuntansi dan/atau pelaporan keuangan",type:"single",opts:["Kurang dari 1 tahun","1–3 tahun","4–5 tahun","Lebih dari 5 tahun"]},
  {s:1,k:"q4",lab:"Pemahaman alur",q:"Seberapa baik Anda memahami alur dan tahapan pelaksanaan akuntansi pada OPD?",type:"scale",sc:S_UNDERSTAND},
- {s:1,k:"q5",lab:"Pemahaman ketentuan",q:"Seberapa baik Anda memahami ketentuan dan peraturan yang berkaitan dengan akuntansi dan pelaporan keuangan?",type:"scale",sc:S_UNDERSTAND},
- {s:1,k:"q6",lab:"Data dan dokumen",q:"Seberapa memadai ketersediaan dan kelengkapan data serta dokumen yang diperlukan untuk pelaksanaan akuntansi dan pelaporan?",type:"scale",sc:S_ADEQUATE},
- {s:1,k:"q7",lab:"Ketepatan waktu data",q:"Seberapa memadai ketepatan waktu penerimaan data dari bidang atau unit kerja yang diperlukan untuk penyusunan laporan?",type:"scale",sc:S_ADEQUATE},
- {s:1,k:"q8",lab:"Koreksi",q:"Seberapa mudah Anda melakukan koreksi atau penyelesaian apabila ditemukan kesalahan dan/atau perbedaan data?",type:"scale",sc:S_EASE},
+ {s:1,k:"q5",lab:"Pengetahuan Perwali",q:"Apakah Anda mengetahui Perwali tentang Kebijakan Akuntansi?",type:"single",opts:["Ya","Tidak"]},
+ {s:1,k:"q6",lab:"Pengumpulan data",q:"Apakah Anda mengalami kesulitan dalam pengumpulan data dari bidang atau unit kerja?",type:"single",opts:["Ya","Tidak"]},
+ {s:1,k:"q7",lab:"Jurnal koreksi di SIPD",q:"Apakah Anda memahami cara penginputan jurnal pada SIPD apabila terdapat kesalahan penginputan kode rekening?",type:"single",opts:["Ya","Tidak"]},
+ {s:1,k:"q8",lab:"Penelusuran selisih SPJ dan LRA",q:"Apakah Anda mengalami kesulitan dalam penelusuran data jika terdapat selisih antara SPJ Fungsional dengan LRA?",type:"single",opts:["Ya","Tidak"]},
  {s:2,k:"q9",lab:"Kendala",q:"Kendala apa yang paling sering Anda hadapi dalam pelaksanaan akuntansi dan pelaporan?",type:"multi",max:3,opts:C9,other:"Sebutkan kendala lainnya"},
  {s:2,k:"q10",lab:"Kendala paling menghambat",q:"Dari kendala yang Anda pilih, mana yang paling menghambat penyelesaian pekerjaan Anda?",type:"single",from:"q9",help:"Pilihan mengikuti jawaban Anda pada pertanyaan sebelumnya."},
  {s:2,k:"q11",lab:"Pengulangan pekerjaan",q:"Seberapa sering pekerjaan akuntansi atau pelaporan harus diperbaiki atau diulang karena kesalahan, perbedaan, atau perubahan data?",type:"single",opts:["Tidak pernah","Jarang","Kadang-kadang","Sering","Sangat sering"]},
  {s:2,k:"q12",lab:"Penyebab utama",q:"Menurut Anda, apa penyebab utama terjadinya kendala atau kesalahan tersebut?",type:"multi",max:3,opts:CAUSES,other:"Sebutkan penyebab lainnya"},
- {s:3,k:"q13",lab:"Menelusuri perbedaan data",q:"Seberapa mudah Anda mengetahui letak dan penyebab ketika terdapat perbedaan data dalam proses rekonsiliasi atau pemeriksaan?",type:"scale",sc:S_EASE,help:"Jawab berdasarkan pengalaman yang pernah Anda alami dalam pekerjaan."},
- {s:3,k:"q14",lab:"Kejelasan tindakan",q:"Seberapa jelas Anda mengetahui tindakan yang harus dilakukan ketika ditemukan perbedaan atau kesalahan data?",type:"scale",sc:S_CLEAR,help:"Jawab berdasarkan pengalaman yang pernah Anda alami dalam pekerjaan."},
- {s:3,k:"q15",lab:"Sumber bantuan",q:"Ketika mengalami permasalahan akuntansi atau pelaporan, sumber bantuan atau solusi apa yang paling sering Anda gunakan terlebih dahulu?",type:"single",opts:["Pedoman/peraturan yang tersedia","Rekan kerja dalam OPD","BPKAD","OPD lain","Contoh kasus/solusi sebelumnya","Mencoba menyelesaikan sendiri","Lainnya"],other:"Sebutkan sumber bantuan lainnya"},
- {s:4,k:"q16",lab:"Materi yang ingin dipahami",q:"Materi apa yang paling ingin Anda pahami atau kuasai lebih lanjut dalam pelaksanaan akuntansi dan pelaporan?",type:"multi",max:5,opts:MATERIALS,other:"Sebutkan materi lainnya"},
- {s:4,k:"q17",lab:"Bentuk pembinaan",q:"Bentuk pembinaan atau dukungan informasi apa yang paling membantu Anda dalam melaksanakan pekerjaan?",type:"multi",max:3,opts:SUPPORT,other:"Sebutkan bentuk lainnya"},
- {s:4,k:"q18",lab:"Waktu membutuhkan bantuan",q:"Pada kondisi apa Anda paling membutuhkan bantuan atau penjelasan dari BPKAD?",type:"multi",help:"Pilih semua kondisi yang sesuai.",opts:["Saat terdapat perubahan ketentuan","Saat menemukan transaksi/permasalahan yang tidak biasa","Saat terjadi perbedaan data","Saat melakukan rekonsiliasi","Saat melakukan koreksi/penyesuaian","Saat menyusun laporan","Saat mendekati batas waktu pelaporan","Saat menerima hasil pemeriksaan/reviu","Secara rutin sebagai pembinaan","Lainnya"],other:"Sebutkan kondisi lainnya"},
- {s:5,k:"q19",lab:"Masalah paling mendesak",q:"Menurut Anda, satu masalah apa yang paling perlu segera diperbaiki dalam pelaksanaan akuntansi dan pelaporan keuangan pada OPD Anda?",type:"area",ph:"Tuliskan masalah yang paling nyata, paling sering terjadi, atau paling berdampak terhadap pekerjaan Anda..."},
- {s:5,k:"q20",lab:"Harapan kepada BPKAD",q:"Dukungan atau perubahan apa yang paling Anda harapkan dari BPKAD agar pelaksanaan akuntansi dan pelaporan menjadi lebih mudah, tepat, dan efektif?",type:"area",ph:"Tuliskan dukungan, perubahan proses, pembinaan, pendampingan, informasi, atau bentuk bantuan lain yang paling Anda butuhkan..."}];
+ {s:3,k:"q13",lab:"Pengetahuan jenis laporan",q:"Apakah Anda mengetahui jenis Laporan Keuangan yang harus disusun oleh Perangkat Daerah?",type:"single",opts:["Ya","Tidak"]},
+ {s:3,k:"q14",lab:"Jenis laporan keuangan",q:"Pilih jenis Laporan Keuangan yang harus disusun oleh OPD.",type:"multi",max:7,opts:["Laporan Realisasi Anggaran (LRA)","Laporan Perubahan Saldo Anggaran Lebih (LPSAL)","Neraca","Laporan Operasional (LO)","Laporan Arus Kas (LAK)","Laporan Perubahan Ekuitas (LPE)","Catatan atas Laporan Keuangan (CaLK)"],help:"Pilih semua jenis laporan yang menurut Anda harus disusun oleh OPD."},
+ {s:3,k:"q15",lab:"Keterkaitan laporan keuangan",q:"Apakah Anda mengetahui keterkaitan antar Laporan Keuangan yang disusun oleh Perangkat Daerah?",type:"single",opts:["Ya","Tidak"]},
+ {s:4,k:"q16",lab:"Menelusuri perbedaan data",q:"Seberapa mudah Anda mengetahui letak dan penyebab ketika terdapat perbedaan data dalam proses rekonsiliasi atau pemeriksaan?",type:"scale",sc:S_EASE,help:"Jawab berdasarkan pengalaman yang pernah Anda alami dalam pekerjaan."},
+ {s:4,k:"q17",lab:"Kejelasan tindakan",q:"Seberapa jelas Anda mengetahui tindakan yang harus dilakukan ketika ditemukan perbedaan atau kesalahan data?",type:"scale",sc:S_CLEAR,help:"Jawab berdasarkan pengalaman yang pernah Anda alami dalam pekerjaan."},
+ {s:4,k:"q18",lab:"Sumber bantuan",q:"Ketika mengalami permasalahan akuntansi atau pelaporan, sumber bantuan atau solusi apa yang paling sering Anda gunakan terlebih dahulu?",type:"single",opts:["Pedoman/peraturan yang tersedia","Rekan kerja dalam OPD","BPKAD","OPD lain","Contoh kasus/solusi sebelumnya","Mencoba menyelesaikan sendiri","Lainnya"],other:"Sebutkan sumber bantuan lainnya"},
+ {s:5,k:"q19",lab:"Materi yang ingin dipahami",q:"Materi apa yang paling ingin Anda pahami atau kuasai lebih lanjut dalam pelaksanaan akuntansi dan pelaporan?",type:"multi",max:5,opts:MATERIALS,other:"Sebutkan materi lainnya"},
+ {s:5,k:"q20",lab:"Bentuk pembinaan",q:"Bentuk pembinaan atau dukungan informasi apa yang paling membantu Anda dalam melaksanakan pekerjaan?",type:"multi",max:3,opts:SUPPORT,other:"Sebutkan bentuk lainnya"},
+ {s:5,k:"q21",lab:"Waktu membutuhkan bantuan",q:"Pada kondisi apa Anda paling membutuhkan bantuan atau penjelasan dari BPKAD?",type:"multi",help:"Pilih semua kondisi yang sesuai.",opts:["Saat terdapat perubahan ketentuan","Saat menemukan transaksi/permasalahan yang tidak biasa","Saat terjadi perbedaan data","Saat melakukan rekonsiliasi","Saat melakukan koreksi/penyesuaian","Saat menyusun laporan","Saat mendekati batas waktu pelaporan","Saat menerima hasil pemeriksaan/reviu","Secara rutin sebagai pembinaan","Lainnya"],other:"Sebutkan kondisi lainnya"},
+ {s:6,k:"q22",lab:"Masalah paling mendesak",q:"Menurut Anda, masalah apa yang paling perlu segera dibahas atau dijelaskan agar pelaksanaan akuntansi dan pelaporan keuangan dapat berjalan lancar pada OPD Anda?",type:"area",ph:"Tuliskan masalah yang paling perlu segera dibahas atau dijelaskan..."},
+ {s:6,k:"q23",lab:"Harapan kepada BPKAD",q:"Dukungan atau perubahan apa yang paling Anda harapkan dari BPKAD agar pelaksanaan akuntansi dan pelaporan menjadi lebih mudah, tepat, dan efektif?",type:"area",ph:"Tuliskan dukungan, perubahan proses, pembinaan, pendampingan, informasi, atau bentuk bantuan lain yang paling Anda butuhkan..."}];
 Q.forEach((q,i)=>q.no=i+1);
 const KEY="kuesioner-opd-draft",POS=KEY+"-pos",DONE="kuesioner-opd-hasil";
 let A=load(KEY,{}),i=0,mode="intro",er=null,busy=false,popping=false;
@@ -57,7 +61,7 @@ function miss(q){const v=A[q.k];if(v==null||v===""||(Array.isArray(v)&&!v.length
 
 // ---------- tampilan dasar ----------
 function stagesNav(){const n=$("#stages");if(mode!=="q"){n.hidden=true;return}n.hidden=false;
- if(n.children.length!=6)n.innerHTML=STAGES.map((x,j)=>`<li class="stage"><span class="ln"><i></i></span><span class="nm"><b>${p2(j+1)}</b><span class="t">${x.n}</span></span></li>`).join("");
+ if(n.children.length!=STAGES.length)n.innerHTML=STAGES.map((x,j)=>`<li class="stage"><span class="ln"><i></i></span><span class="nm"><b>${p2(j+1)}</b><span class="t">${x.n}</span></span></li>`).join("");
  const s=Q[i].s;[...n.children].forEach((li,j)=>{const ix=Q.filter(q=>q.s==j),f=ix[0].no-1;
   li.className="stage "+(j<s?"done":j==s?"now":"");j==s?li.setAttribute("aria-current","step"):li.removeAttribute("aria-current");
   li.querySelector("i").style.width=(j<s?100:j==s?Math.round((i-f+.5)/ix.length*100):0)+"%"})}
@@ -71,7 +75,7 @@ function intro(){mode="intro";er=null;push({m:"intro"});const has=filled(),pos=l
  <h1 class="ttl">Identifikasi Kebutuhan<br>dan Kendala OPD</h1>
  <p class="sub">Pelaksanaan Akuntansi<br>dan Pelaporan Keuangan</p>
  <p class="tagline">Memahami kondisi nyata.<br>Menentukan pembinaan yang tepat.</p>
- <ul class="facts"><li><b>20</b>pertanyaan</li><li><b>8–10</b>menit</li><li>Tanpa data pribadi</li></ul>
+ <ul class="facts"><li><b>${Q.length}</b>pertanyaan</li><li><b>8–10</b>menit</li><li>Tanpa data pribadi</li></ul>
  <div class="act"><button class="btn" id="go">${has?"Lanjutkan Mengisi":"Mulai Mengisi"}</button>${has?`<button class="btn ghost" id="reset">Mulai dari awal</button>`:""}</div>
  <div class="fine"><p>Kuesioner ini memberi gambaran mengenai pelaksanaan akuntansi dan pelaporan keuangan pada OPD: tingkat pemahaman, kendala, penyebab permasalahan, kebutuhan pembinaan, dan dukungan yang diperlukan dari BPKAD.</p><p>Tidak ada jawaban benar atau salah. Mohon menjawab sesuai kondisi yang sebenarnya Anda alami.</p></div>`);
  $("#go").onclick=()=>{if(!has)return go(0);pos==="r"?review():go(Math.min(Math.max(+pos||0,0),Q.length-1))};
@@ -92,7 +96,7 @@ function draw(){const q=Q[i],st=STAGES[q.s];if(q.from)sanitize();
   if(q.other)body+=`<div class="extra" id="ex" hidden><label for="ot">${q.other}</label><input type="text" id="ot" value="${esc(A[q.k+"_o"]||"")}"></div>`}
  const lastInSec=i==Q.length-1||Q[i+1].s!=q.s;
  show(`<div class="cat">Tahap ${p2(q.s+1)} · ${st.t}</div>
- <div class="${q.s==5?"reflect":""}"><div class="qn"><b>${p2(q.no)}</b> dari 20</div><h2 id="qt">${q.q}</h2>
+ <div class="${q.s==5?"reflect":""}"><div class="qn"><b>${p2(q.no)}</b> dari ${Q.length}</div><h2 id="qt">${q.q}</h2>
  ${st.intro&&q.no==4?`<p class="note">${st.intro}</p>`:""}${help?`<p class="help">${help}</p>`:""}${body}<p class="err" id="err" role="alert"></p></div>`,
  navBar("Kembali",er!=null?(lastInSec?"Simpan dan kembali ke ringkasan":"Lanjut"):i==Q.length-1?"Periksa Jawaban":"Lanjut"));
  bind(q);
